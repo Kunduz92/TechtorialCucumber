@@ -77,17 +77,20 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <!--We need this plugin to run our class from command line-->
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.21.0</version>
-                <configuration>
-                    <testFailureIgnore>true</testFailureIgnore>
-                    <includes>
-                        <!--This needs to be your runner class name-->
-                        <include>**/*EtsyRunner.java</include>
-                        <include>ProductRunner.java</include>
-                    </includes>
-                </configuration>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.22.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                        <configuration>
+                            <parallel>methods</parallel>
+                            <useUnlimitedThreads>true</useUnlimitedThreads>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>net.masterthought</groupId>

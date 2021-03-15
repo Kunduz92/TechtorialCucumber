@@ -12,7 +12,7 @@ public class GroupOrderPage {
    }
 
    @FindBy(id="InviteNote")
-    public WebElement inviteNote;
+ mvn brew install mavenhttps://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"   public WebElement inviteNote;
 
    @FindBy (id="inviteList")
     public WebElement inviteList;
